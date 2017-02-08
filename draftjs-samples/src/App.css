@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -14,15 +20,55 @@
   color: white;
 }
 
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
 .editor{
 font-size: large;
   text-align: left;
   margin: 20PX;
   border: 2PX solid black;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+.layout{
+  display: flex;
+  flex-flow: row 
 }
+
+
+
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+    background-color: #333;
+    width:200px;
+
+}
+
+.menu-item {
+   
+    display: block;
+    text-decoration: none;
+    padding:8px 16px;
+}
+
+.menu-link {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+.menu-link:hover {
+    background-color: #111;
+}
+
