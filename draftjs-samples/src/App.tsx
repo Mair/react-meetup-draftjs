@@ -4,6 +4,7 @@ import { Router, Route, Link, browserHistory } from 'react-router';
 import * as DraftSamples from './draftjs';
 const logo = require('./logo.svg');
 
+
 const LinkItem = (props: { route: string, DisplayText: string }) =>
   <li className="menu-item">
     <Link to={props.route} className="menu-link" activeStyle={{ color: 'cyan' }}>{props.DisplayText}</Link>
