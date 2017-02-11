@@ -1,0 +1,51 @@
+import * as React from 'react';
+import * as Draft from 'draft-js';
+import * as EmojiOne from 'emojione';
+
+const Emoji = () => <span>xxx</span>;
+
+const Emojis = (props: { onClick: (backgroundUrl: string) => void }) =>
+    <div className="emojiList">
+        {Object.keys(EmojiOne.emojioneList).map((shortName, i) => {
+            if (i > 100) { return; };
+            const emoji = EmojiOne.emojioneList[shortName];
+            const backgroundImageUrl = `url(${EmojiOne.imagePathPNG}${emoji.fname}.png${EmojiOne.cacheBustParam})`;
+            return <div
+                className="emoji"
+                key={`${emoji.fname}_${i}`}
+                style={{ backgroundImage: backgroundImageUrl }}
+                onClick={() => props.onClick(backgroundImageUrl)}
+            />;
+        })}
+    </div>;
+
+export class Blockfn extends React.Component<null, { editorState: Draft.EditorState }> {
+    state = { editorState: Draft.EditorState.createEmpty() };
+
+    editorStateChanged = (newEditorState: Draft.EditorState) => this.setState({ editorState: newEditorState });
+
+    emojiBlockFn = (contentBlock: Draft.ContentBlock) => {
+        if (contentBlock.getType() === 'atomic') {
+            return {
+                component: Emoji
+            };
+        }
+        return null;
+    }
+
+    render() {
+        return <div>
+            <div className="editor">
+                <Draft.Editor
+                    editorState={this.state.editorState}
+                    onChange={this.editorStateChanged}
+                    blockRendererFn={this.emojiBlockFn}
+                />
+
+            </div>
+            <Emojis onClick={} />
+        </div>;
+    }
+}
+
+

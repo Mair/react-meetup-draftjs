@@ -11,9 +11,11 @@ export class Simple extends React.Component<null, { editorState: EditorState }> 
     }
 
     render() {
-        return <Editor
-            editorState={this.state.editorState}
-            onChange={this.editorStateChanged}
-        />;
+        return <div className="editor">
+            <Editor
+                editorState={this.state.editorState}
+                onChange={this.editorStateChanged}
+            />
+        </div>;
     }
 }  

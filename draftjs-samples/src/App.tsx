@@ -1,42 +1,36 @@
 import * as React from 'react';
-import './App.css';
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Router, Route, Link, browserHistory, Redirect } from 'react-router';
 import * as DraftSamples from './draftjs';
-const logo = require('./logo.svg');
+import { Layout } from './layout';
+import { HomeDoc } from './home';
 
-
-const LinkItem = (props: { route: string, DisplayText: string }) =>
-  <li className="menu-item">
+const LinkItem = (props: { route: string, DisplayText: string, isSection?: boolean }) =>
+  <li className={props.isSection ? 'menu-section' : 'menu-item'}>
     <Link to={props.route} className="menu-link" activeStyle={{ color: 'cyan' }}>{props.DisplayText}</Link>
   </li>;
 
-const Links = () =>
+export const Links = () =>
   <ul className="menu">
+    <LinkItem DisplayText="Home" route="/" />
     <LinkItem DisplayText="Simple" route="simple" />
+    <LinkItem DisplayText="Content State" route="contentstate" isSection={true} />
+    <LinkItem DisplayText="Selection State" route="selectionstate" />
     <LinkItem DisplayText="Rich Utils" route="rich-utils" />
+    <LinkItem DisplayText="Block Function" route="blockfn" />
   </ul>;
-
-const Home = (props) =>
-  <div className="App">
-    <div className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h2>Welcome to React and... Draft-js</h2>
-    </div>
-    <div className="layout">
-      <Links />
-      <div className="editor">
-        {props.children}
-      </div>
-    </div>
-  </div>;
 
 class App extends React.Component<null, null> {
   render() {
     return (
       <Router history={browserHistory}>
-        <Route path="/" component={Home} >
-          <Route path="/simple" component={DraftSamples.Simple}  />
-          <Route path="/rich-utils" component={DraftSamples.RichUtilsSample} />
+        <Redirect from="/" to="/Home" />
+        <Route path="/" component={Layout} >
+          <Route path="/home" component={HomeDoc} />
+          <Route path="/simple" component={DraftSamples.SimpleWithDoc} />
+          <Route path="/contentstate" component={DraftSamples.ContentStateViewWithDoc} />
+          <Route path="/selectionstate" component={DraftSamples.SelectionStateViewWithDoc} />
+          <Route path="/rich-utils" component={DraftSamples.RichUtilsSampleWithDoc} />
+          <Route path="/blockfn" component={DraftSamples.BlockfnWithDoc} />
         </Route>
       </Router>
 
