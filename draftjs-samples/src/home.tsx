@@ -8,5 +8,3 @@ class Home extends React.Component<{}, {}> {
 const HomeDoc = addMDHOC(Home, '/placeholder.md');
 
 export { HomeDoc }
-
-

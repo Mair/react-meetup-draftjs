@@ -24,7 +24,7 @@ export class SelectionStateView extends React.Component<null, Partial<SelectionS
 
         // sample of some data we can get from the selection state
         const offset = selectionState.getAnchorOffset();
-        const focusOffset = selectionState.getFocusOffset(); 
+        const focusOffset = selectionState.getFocusOffset();
         const isBackwards = selectionState.getIsBackward();
         return {
             offset,
@@ -60,18 +60,20 @@ export class SelectionStateView extends React.Component<null, Partial<SelectionS
                 />
             </div>
             <table>
-                <tr>
-                    <td>offset:</td>
-                    <td>{this.selectionState.offset}</td>
-                </tr>
-                 <tr>
-                    <td>Focus Offset:</td>
-                    <td>{this.selectionState.focusOffset}</td>
-                </tr>
-                <tr>
-                    <td>is backwards:</td>
-                    <td>{this.selectionState.isBackwards ? 'true' : 'false'}</td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>offset:</td>
+                        <td>{this.selectionState.offset}</td>
+                    </tr>
+                    <tr>
+                        <td>Focus Offset:</td>
+                        <td>{this.selectionState.focusOffset}</td>
+                    </tr>
+                    <tr>
+                        <td>is backwards:</td>
+                        <td>{this.selectionState.isBackwards ? 'true' : 'false'}</td>
+                    </tr>
+                </tbody>
             </table>
             {/*<div>offset: {this.selectionState.offset}</div>
             <div>Focus Offset: {this.selectionState.focusOffset}</div>
@@ -100,14 +102,14 @@ class SetSelectionForm extends React.Component<SetSelectionprops, SetSelectionSt
                 offset <input
                     type="number"
                     value={this.state.offset}
-                    onChange={e => this.setState({offset: Number.parseInt(e.target.value)})}
+                    onChange={e => this.setState({ offset: Number.parseInt(e.target.value) })}
                 />
             </div>
             <div>
                 end offset <input
                     type="number"
                     value={this.state.focusOffset}
-                    onChange={e => this.setState({focusOffset: Number.parseInt(e.target.value)})}
+                    onChange={e => this.setState({ focusOffset: Number.parseInt(e.target.value) })}
                 />
             </div>
             <button onClick={() => this.props.callback(this.state.offset, this.state.focusOffset)} >

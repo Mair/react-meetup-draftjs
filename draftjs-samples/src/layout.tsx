@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {Links} from './App';
 
-
 const logo = require('./logo.svg');
 
 export const Layout = (props) =>

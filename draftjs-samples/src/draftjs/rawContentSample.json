@@ -1,0 +1,31 @@
+{
+    "entityMap": {},
+    "blocks": [
+        {
+            "key": "5h45l",
+            "text": "the quick brown fox jumps over the lazy dog ",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 4,
+                    "length": 5,
+                    "style": "ITALIC"
+                },
+            
+                {
+                    "offset": 10,
+                    "length": 5,
+                    "style": "UNDERLINE"
+                },
+               {
+                    "offset": 16,
+                    "length": 3,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        }
+    ]
+}

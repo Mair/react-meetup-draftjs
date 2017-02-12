@@ -2,17 +2,19 @@ import * as React from 'react';
 import * as MarkDown from 'react-remarkable';
 import * as hljs from 'highlight.js';
 
-
 var mdOptions = {
+    // tslint:disable-next-line:typedef
     highlight: function (str, lang) {
         if (lang && hljs.getLanguage(lang)) {
             try {
                 return hljs.highlight(lang, str).value;
+                // tslint:disable-next-line:no-empty
             } catch (err) { }
         }
 
         try {
             return hljs.highlightAuto(str).value;
+            // tslint:disable-next-line:no-empty
         } catch (err) { }
 
         return ''; // use external default escaping
@@ -33,7 +35,6 @@ const addMDHOC = (WrappedComponent: React.ComponentClass<any>, documentUrl: stri
             let responce = await fetch(documentUrl);
             let doctxtresponce = await responce.text();
             this.setState({ doctxt: doctxtresponce });
-
         }
 
         render() {
