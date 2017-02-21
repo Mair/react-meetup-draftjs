@@ -1,7 +1,7 @@
 # Selection editorState
 
 ## getting selection
-you can use selection to locate where to manipulate text such as inserts or deletions 
+SelectionState represents the cursor, its position and what it is selecting. You can use selection to manipulate text such as inserting or deleting.
 
 ``` typescript
   get selectionState() {

@@ -5,6 +5,6 @@ class Home extends React.Component<{}, {}> {
     render() { return null; }
 }
 
-const HomeDoc = addMDHOC(Home, '/placeholder.md');
+const HomeDoc = addMDHOC(Home, '/docs/home.md');
 
 export { HomeDoc }

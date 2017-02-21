@@ -54,8 +54,9 @@ export class Blockfn extends React.Component<null, { editorState: Draft.EditorSt
                 />
             </div>
             <input value={this.state.imgUrl} onChange={e => this.setState({ imgUrl: e.target.value })} />
-            <img src={this.state.imgUrl} />
+            <img src={this.state.imgUrl} style={{maxWidth: 200, maxHeight: 200}} />
             <button onClick={this.insertImage} >insert image</button>
+            ... like this one https://cdn.pixabay.com/photo/2016/09/05/21/37/cat-1647775_1280.jpg
         </div>;
     }
 }

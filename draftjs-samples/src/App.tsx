@@ -12,13 +12,28 @@ const LinkItem = (props: { route: string, DisplayText: string, isSection?: boole
 export const Links = () =>
   <ul className="menu">
     <LinkItem DisplayText="Home" route="/" />
-   
     <LinkItem DisplayText="Simple" route="simple" />
-    <LinkItem DisplayText="Content State" route="contentstate" isSection={true} />
+
+    <li className="menu-section">
+      <a href="#" className="menu-link">API Basics</a>
+    </li>;
+    <LinkItem DisplayText="Content State" route="contentstate"  />
     <LinkItem DisplayText="Create content state" route="createeditorstate" />
-    <LinkItem DisplayText="Selection State" route="selectionstate" />
+    <LinkItem DisplayText="Selection State" route="selectionstate"  />
+    <LinkItem DisplayText="Entity" route="entity" />
+
+    <li className="menu-section">
+      <a href="#" className="menu-link">helpers</a>
+    </li>;
     <LinkItem DisplayText="Rich Utils" route="rich-utils" />
     <LinkItem DisplayText="Block Function" route="blockfn" />
+
+    <li className="menu-section">
+      <a href="#" className="menu-link">Decorators</a>
+    </li>;
+    <LinkItem DisplayText="Hashtag Decorator" route="hashtagdecorator" />
+    <LinkItem DisplayText="Regex Decorator" route="simpledecorator" />
+    <LinkItem DisplayText="Complex Decorator" route="complexdecorator" />
   </ul>;
 
 class App extends React.Component<null, null> {
@@ -28,12 +43,16 @@ class App extends React.Component<null, null> {
         <Redirect from="/" to="/Home" />
         <Route path="/" component={Layout} >
           <Route path="/home" component={HomeDoc} />
+          <Route path="/entity" component={DraftSamples.EntitySampleWithDoc} />
+          <Route path="/simpledecorator" component={DraftSamples.SimpleDecoratorWithDoc} />
+          <Route path="/hashtagdecorator" component={DraftSamples.HashtagDecoratorWithDoc} />
           <Route path="/createeditorstate" component={DraftSamples.CreateEditorStateWithDoc} />
           <Route path="/simple" component={DraftSamples.SimpleWithDoc} />
           <Route path="/contentstate" component={DraftSamples.ContentStateViewWithDoc} />
           <Route path="/selectionstate" component={DraftSamples.SelectionStateViewWithDoc} />
           <Route path="/rich-utils" component={DraftSamples.RichUtilsSampleWithDoc} />
           <Route path="/blockfn" component={DraftSamples.BlockfnWithDoc} />
+          <Route path="complexdecorator" component={DraftSamples.ComplexDecoratorStateWithDoc} />
         </Route>
       </Router>
 

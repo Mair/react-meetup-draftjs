@@ -6,6 +6,6 @@ import 'highlight.js/styles/androidstudio.css';
 import './App.css';
 
 ReactDOM.render(
-  <App />,
+  <div className="container-fluid"><App /></div>,
   document.getElementById('root') as HTMLElement
 );

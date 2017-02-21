@@ -44,37 +44,46 @@ export class CreateContentState extends React.Component<null, CreateContentState
                     onChange={this.editorStateChanged}
                 />
             </div >
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <input
-                                type="text"
-                                value={this.state.plainText}
-                                onChange={e => this.setState({ plainText: e.target.value })}
-                            />
-                        </td>
-                        <td>
-                            <button onClick={this.createWithPlainText}>create with text</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><pre>see json in document below... </pre></td>
-                        <td><button onClick={this.createWithRawContent}>create with raw content</button></td>
-                    </tr>
 
-                    <tr>
-                        <td>
-                            <textarea
-                                value={this.state.html}
-                                onChange={e => this.setState({ html: e.target.value })}
-                            />
-                        </td>
-                        <td><button onClick={this.createWithHTML}>create with HTML</button></td>
-                    </tr>
+            <div className="form-horizontal col-sm-12">
 
-                </tbody>
-            </table>
+                <div className="form-group  col-sm-12">
+                    <input
+                        type="text"
+                        value={this.state.plainText}
+                        onChange={e => this.setState({ plainText: e.target.value })}
+                        className="col-sm-6"
+                    />
+                    <button
+                        className="col-sm-6"
+                        onClick={this.createWithPlainText}
+                    >
+                        create with text
+                    </button>
+                </div>
+                <div className="form-group  col-sm-12">
+                    <label className="control-label col-sm-6">see json in document below...</label>
+                    <button
+                        className="col-sm-6"
+                        onClick={this.createWithRawContent}
+                    >
+                        create with raw content
+                    </button>
+                </div>
+                <div className="form-group  col-sm-12">
+                    <textarea
+                        value={this.state.html}
+                        onChange={e => this.setState({ plainText: e.target.value })}
+                        className="col-sm-6"
+                    />
+                    <button
+                        className="col-sm-6"
+                        onClick={this.createWithHTML}
+                    >
+                        create with HTML
+                    </button>
+                </div>
+            </div>
         </div>;
     }
 }

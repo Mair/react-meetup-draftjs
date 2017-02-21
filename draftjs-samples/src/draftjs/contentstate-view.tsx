@@ -29,8 +29,17 @@ export class ContentStateView extends React.Component<null, { editorState: Draft
                     onChange={this.editorStateChanged}
                 />
             </div>
-            <pre>{this.contentState.jsonStr}</pre>
-            <div>{this.contentState.plainText}</div>
+
+           <div className="row">
+                <div className="col-sm-6">
+                    JSON view
+                    <pre>{this.contentState.jsonStr}</pre>
+                </div>
+                <div className="col-sm-6">
+                    Raw Text View
+                    <div>{this.contentState.plainText}</div>
+                </div>
+           </div>
         </div>;
     }
 }  
