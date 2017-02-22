@@ -45,3 +45,5 @@ export class Simple extends React.Component<null, { editorState: EditorState }> 
 }  
 
 ```
+
+[source](https://github.com/Mair/react-meetup-draftjs/blob/master/src/draftjs/simple.tsx)

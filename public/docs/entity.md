@@ -67,7 +67,7 @@ If you try to create an entity over a range where one already exist, the entity 
 Please see [Draft-js documentation](https://facebook.github.io/draft-js/docs/advanced-topics-entities.html)
 under the Mutability section.
 
-
+[source](https://github.com/Mair/react-meetup-draftjs/blob/master/src/draftjs/entity.tsx)
 
 
    

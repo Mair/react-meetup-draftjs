@@ -41,3 +41,4 @@ SelectionState represents the cursor, its position and what it is selecting. You
     }
 ```
 
+[source](https://github.com/Mair/react-meetup-draftjs/blob/master/src/draftjs/selectionstate.tsx)
