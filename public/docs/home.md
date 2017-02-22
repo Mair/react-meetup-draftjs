@@ -15,7 +15,7 @@ your new changes. The new EditorState is then given to the edit control where yo
 * The EditorState controls has child objects that show the actual state of what is being represented in the editor including 
 text, cursor / selection, styling etc.
 
-![](/docs/EditorState.png)
+![](/docs/EditorState_2.png)
 
 ## Definitons
 - *EditorState* : The object responsible for the current state as represented in the Editor
