@@ -155,10 +155,9 @@ const StockItem = (props: StockItemDef) => <div className="stockDetail">
     <div>Contact: {props.SupplierContact}</div>
 </div>;
 
-
 class EntityStock extends React.Component<{ stockItem: StockItemDef }, { hovering: boolean }> {
 
-    state = { hovering: false }
+    state = { hovering: false };
     render() {
         return <span>
             <span

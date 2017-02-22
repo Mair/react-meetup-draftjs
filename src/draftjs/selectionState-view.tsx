@@ -71,7 +71,6 @@ export class SelectionStateView extends React.Component<null, Partial<SelectionS
                     <label htmlFor="data" className="control-label col-sm-6">{this.selectionState.focusOffset}</label>
                 </div>
 
-
                 <div className="form-group">
                     <label htmlFor="data" className="control-label col-sm-6">is backwards</label>
                     <label htmlFor="data" className="control-label col-sm-6">
@@ -129,11 +128,10 @@ class SetSelectionForm extends React.Component<SetSelectionprops, SetSelectionSt
             </div>
             <button
                 className="button col-sm-3 col-sm-offset-8"
-                onClick={() => this.props.callback(this.state.offset, this.state.focusOffset)} >
+                onClick={() => this.props.callback(this.state.offset, this.state.focusOffset)}
+            >
                 set selection state
             </button>
         </div>;
-
-
     }
 }

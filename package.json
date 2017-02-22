@@ -3,18 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "@types/draft-js": "^0.9.0",
     "@types/emojione": "^2.2.0",
     "@types/highlight.js": "^9.1.9",
+    "@types/jest": "^18.1.1",
+    "@types/node": "^7.0.5",
+    "@types/react": "^15.0.6",
+    "@types/react-dom": "^0.14.22",
     "@types/react-router": "^3.0.1",
     "@types/whatwg-fetch": "0.0.33",
     "react-scripts-ts": "1.0.6"
   },
   "dependencies": {
-    "@types/jest": "^18.1.1",
-    "@types/node": "^7.0.5",
-    "@types/react": "^15.0.6",
-    "@types/react-dom": "^0.14.22",
     "draft-js": "^0.10.0",
     "emojione": "^2.2.7",
     "highlight.js": "^9.9.0",
