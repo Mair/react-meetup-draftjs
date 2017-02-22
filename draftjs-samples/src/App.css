@@ -191,6 +191,12 @@ pre code {
 	box-sizing: content-box;
 }
 
+.selection-form{
+  border: 1px solid grey;
+  
+  padding: 5px;
+}
+
 
  
 

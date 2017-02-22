@@ -9,7 +9,9 @@ import {Entity} from './entity';
 import {RegexDecorator} from './regexDecorator';
 import {HashtagDecorator} from './hashtagDecorator';
 import {ComplexDecorator} from './ComplexDecorator';
+// import {Home} from './home';
 
+export const HomeWithDoc = addMDHOC(Simple,  '/docs/home.md');
 export const SimpleWithDoc = addMDHOC(Simple,  '/docs/simple.md');
 export const SimpleDecoratorWithDoc = addMDHOC(RegexDecorator,  '/docs/placeholder.md');
 export const HashtagDecoratorWithDoc = addMDHOC(HashtagDecorator,  '/docs/placeholder.md');

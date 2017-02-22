@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Router, Route, Link, browserHistory, Redirect } from 'react-router';
 import * as DraftSamples from './draftjs';
 import { Layout } from './layout';
-import { HomeDoc } from './home';
 
 const LinkItem = (props: { route: string, DisplayText: string, isSection?: boolean }) =>
   <li className={props.isSection ? 'menu-section' : 'menu-item'}>
@@ -42,7 +41,7 @@ class App extends React.Component<null, null> {
       <Router history={browserHistory}>
         <Redirect from="/" to="/Home" />
         <Route path="/" component={Layout} >
-          <Route path="/home" component={HomeDoc} />
+          <Route path="/home" component={DraftSamples.HomeWithDoc} />
           <Route path="/entity" component={DraftSamples.EntitySampleWithDoc} />
           <Route path="/simpledecorator" component={DraftSamples.SimpleDecoratorWithDoc} />
           <Route path="/hashtagdecorator" component={DraftSamples.HashtagDecoratorWithDoc} />

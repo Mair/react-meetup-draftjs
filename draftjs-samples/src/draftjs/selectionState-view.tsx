@@ -59,26 +59,28 @@ export class SelectionStateView extends React.Component<null, Partial<SelectionS
                     onChange={this.editorStateChanged}
                 />
             </div>
-            <table>
-                <tbody>
-                    <tr>
-                        <td>offset:</td>
-                        <td>{this.selectionState.offset}</td>
-                    </tr>
-                    <tr>
-                        <td>Focus Offset:</td>
-                        <td>{this.selectionState.focusOffset}</td>
-                    </tr>
-                    <tr>
-                        <td>is backwards:</td>
-                        <td>{this.selectionState.isBackwards ? 'true' : 'false'}</td>
-                    </tr>
-                </tbody>
-            </table>
-            {/*<div>offset: {this.selectionState.offset}</div>
-            <div>Focus Offset: {this.selectionState.focusOffset}</div>
-            <div>is backwards: {this.selectionState.isBackwards ? 'true' : 'false'}</div>*/}
-            <SetSelectionForm callback={this.setSelection} />
+
+            <div className="form-horizontal col-sm-12">
+                <div className="form-group">
+                    <label htmlFor="data" className="control-label col-sm-6">offset</label>
+                    <label htmlFor="data" className="control-label col-sm-6">{this.selectionState.offset}</label>
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="data" className="control-label col-sm-6">Focus Offset</label>
+                    <label htmlFor="data" className="control-label col-sm-6">{this.selectionState.focusOffset}</label>
+                </div>
+
+
+                <div className="form-group">
+                    <label htmlFor="data" className="control-label col-sm-6">is backwards</label>
+                    <label htmlFor="data" className="control-label col-sm-6">
+                        {this.selectionState.isBackwards ? 'true' : 'false'}
+                    </label>
+                </div>
+                <SetSelectionForm callback={this.setSelection} />
+            </div>
+
         </div >;
     }
 }
@@ -97,24 +99,41 @@ class SetSelectionForm extends React.Component<SetSelectionprops, SetSelectionSt
         focusOffset: 0
     };
     render() {
-        return <div className="form">
-            <div>
-                offset <input
-                    type="number"
-                    value={this.state.offset}
-                    onChange={e => this.setState({ offset: Number.parseInt(e.target.value) })}
-                />
+        return <div className="selection-form">
+            <div className="form-group">
+                <label htmlFor="data" className="control-label col-sm-6">offset</label>
+                <div className="col-sm-6">
+                    <input
+                        type="number"
+                        className="form-control"
+                        id="data"
+                        placeholder="data to save"
+                        value={this.state.offset}
+                        onChange={e => this.setState({ offset: Number.parseInt(e.target.value) })}
+                    />
+                </div>
             </div>
-            <div>
-                end offset <input
-                    type="number"
-                    value={this.state.focusOffset}
-                    onChange={e => this.setState({ focusOffset: Number.parseInt(e.target.value) })}
-                />
+
+            <div className="form-group">
+                <label htmlFor="data" className="control-label col-sm-6">end offset</label>
+                <div className="col-sm-6">
+                    <input
+                        type="number"
+                        className="form-control"
+                        id="data"
+                        placeholder="data to save"
+                        value={this.state.focusOffset}
+                        onChange={e => this.setState({ focusOffset: Number.parseInt(e.target.value) })}
+                    />
+                </div>
             </div>
-            <button onClick={() => this.props.callback(this.state.offset, this.state.focusOffset)} >
+            <button
+                className="button col-sm-3 col-sm-offset-8"
+                onClick={() => this.props.callback(this.state.offset, this.state.focusOffset)} >
                 set selection state
-                </button>
+            </button>
         </div>;
+
+
     }
 }
