@@ -1,7 +1,7 @@
 # Draft-js samples
 
 
-## [visit site](https://draftjs-samples-jnlmhnwfoh.now.sh)
+## [visit site](https://build-sftaykknun.now.sh)
 
 This application shows different aspects of the Draft-js API and some of the ways you can use it.
 
