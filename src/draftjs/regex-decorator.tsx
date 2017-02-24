@@ -9,14 +9,17 @@ const regexStratergy = (block: Draft.ContentBlock, callback: (start: number, end
     if (!regexString) { return; }
     var regex: RegExp;
     try {
-        regex = new RegExp(regexString, 'gm');
+        regex = new RegExp(regexString, 'g');
     } catch (e) {
         // invalid regex so return;
         return;
     }
+    let escapeHatch = 0;
     while ((result = regex.exec(text) as RegExpExecArray) != null) {
         let start = result.index;
         let end = start + result[0].length;
+        // hack to vercome situations where regex.exec doesn't move the curser
+        if (escapeHatch++ > 100) {return; }
         callback(start, end);
     }
 };
