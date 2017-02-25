@@ -197,7 +197,11 @@ pre code {
   padding: 5px;
 }
 
-
+.fantasy-font{
+  font-family: fantasy;
+  text-align: center;
+  
+}
  
 
 	

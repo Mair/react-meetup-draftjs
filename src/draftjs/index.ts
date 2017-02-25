@@ -9,8 +9,9 @@ import {Entity} from './entity';
 import {RegexDecorator} from './regex-decorator';
 import {HashtagDecorator} from './hashtag-decorator';
 import {ComplexDecorator} from './complex-decorator';
-// import {Home} from './home';
+import {BlockStyling} from './block-styling';
 
+export const BlockStylingWithDoc = addMDHOC(BlockStyling,  '/docs/blockStyling.md');
 export const HomeWithDoc = addMDHOC(Simple,  '/docs/home.md');
 export const SimpleWithDoc = addMDHOC(Simple,  '/docs/simple.md');
 export const SimpleDecoratorWithDoc = addMDHOC(RegexDecorator,  '/docs/regexDecorator.md');

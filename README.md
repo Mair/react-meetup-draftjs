@@ -3,9 +3,15 @@
 
 ## [visit site](https://draft-js-samples.now.sh)
 
+Draft-js is a rich text editor APi created by facebook
 This application shows different aspects of the Draft-js API and some of the ways you can use it.
 
+
 [Official Draft-js site](https://facebook.github.io/draft-js/)  
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=vOZAO3jFSHI
+" target="_blank"><img src="http://img.youtube.com/vi/vOZAO3jFSHI/0.jpg" 
+alt="meet up video" width="720" border="3" /></a>
 
 The Intent is to provide a tool that will quickly but gently bring someone up to speed everything Draft-js related
 
