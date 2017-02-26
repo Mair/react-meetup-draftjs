@@ -2,23 +2,29 @@ import * as React from 'react';
 import * as Draft from 'draft-js';
 
 const renderimg = (props) => {
+    // get the entity
     const entity = props.contentState.getEntity(props.block.getEntityAt(0));
+    // get the entity data
     const {src} = entity.getData();
     const backgroundImageUrl = `url(${src})`;
+    // return our custom react component
     return <div style={{ backgroundImage: backgroundImageUrl }} className="draftImg" />;
 };
 
 export class Blockfn extends React.Component<null, { editorState: Draft.EditorState, imgUrl: string }> {
     state = {
         editorState: Draft.EditorState.createEmpty(),
-        imgUrl: ''
+        imgUrl: '/docs/EditorState_2.png'
     };
 
     editorStateChanged = (newEditorState: Draft.EditorState) => this.setState({ editorState: newEditorState });
 
     insertImage = () => {
+        // create an entity
         let {editorState} = this.state;
         const contentState = editorState.getCurrentContent();
+        
+        // set the url of the entity to the usrl chosen for the image
         const contentStateWithEntity = contentState.createEntity(
             'img',
             'IMMUTABLE',
@@ -29,12 +35,13 @@ export class Blockfn extends React.Component<null, { editorState: Draft.EditorSt
             editorState,
             { currentContent: contentStateWithEntity }
         );
+
+        // insert a new atomic block with the entity and a whit space as the text
         const newEditorStateWithBlock = Draft.AtomicBlockUtils.insertAtomicBlock(newEditorState, entityKey, ' ');
-        this.editorStateChanged(newEditorStateWithBlock);
-        this.setState({ imgUrl: '' });
+        this.setState({ imgUrl: '', editorState: newEditorStateWithBlock });
     }
 
-    emojiBlockFn = (contentBlock: Draft.ContentBlock) => {
+    imageBlockFn = (contentBlock: Draft.ContentBlock) => {
         if (contentBlock.getType() === 'atomic') {
             return {
                 component: renderimg,
@@ -50,7 +57,7 @@ export class Blockfn extends React.Component<null, { editorState: Draft.EditorSt
                 <Draft.Editor
                     editorState={this.state.editorState}
                     onChange={this.editorStateChanged}
-                    blockRendererFn={this.emojiBlockFn}
+                    blockRendererFn={this.imageBlockFn}
                 />
             </div>
             <input value={this.state.imgUrl} onChange={e => this.setState({ imgUrl: e.target.value })} />
