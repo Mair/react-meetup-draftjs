@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts-ts": "1.1.6"
+    "react-scripts-ts": "2.6.0"
   },
   "dependencies": {
     "@types/jest": "^18.1.1",
-    "@types/node": "^7.0.5",
     "@types/react": "^15.0.12",
     "@types/react-dom": "^0.14.23",
     "@types/highlight.js": "^9.1.9",
     "@types/react-router": "^3.0.1",
+    "@types/node": "^7.0.43",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "draft-js": "^0.10.0",
